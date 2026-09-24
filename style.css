@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    font-family: Arial, sans-serif;
+
+    background: #101010;
+    color: white;
+}
+
+
+/* Calculator */
+
+.calculator {
+    width: min(100%, 360px);
+
+    padding: 20px;
+
+    background: #181818;
+
+    border: 1px solid #2d2d2d;
+    border-radius: 24px;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Display */
+
+.display {
+    min-height: 120px;
+
+    padding: 20px;
+
+    margin-bottom: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    background: #101010;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+}
+
+#previous {
+    min-height: 25px;
+
+    color: #777;
+
+    font-size: 16px;
+}
+
+#current {
+    width: 100%;
+
+    text-align: right;
+
+    font-size: clamp(38px, 12vw, 52px);
+    font-weight: 600;
+
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+/* Buttons */
+
+.buttons {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+button {
+    min-width: 0;
+    min-height: 65px;
+
+    border: none;
+    border-radius: 14px;
+
+    background: #252525;
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        transform 0.1s ease;
+}
+
+button:hover {
+    background: #303030;
+}
+
+button:active {
+    transform: scale(0.94);
+}
+
+
+/* Functions */
+
+.function {
+    color: #ff7b5c;
+    background: #202020;
+}
+
+
+/* Operators */
+
+.operator {
+    background: #2b2b2b;
+    color: #ff6b4a;
+}
+
+.operator:hover {
+    background: #363636;
+}
+
+
+/* Equals */
+
+.equals {
+    background: #ff6b4a;
+    color: white;
+}
+
+.equals:hover {
+    background: #ff795b;
+}
+
+
+/* Zero */
+
+.zero {
+    grid-column: span 2;
+}
+
+
+/* Mobile */
+
+@media (max-width: 400px) {
+
+    body {
+        padding: 12px;
+    }
+
+    .calculator {
+        padding: 15px;
+        border-radius: 20px;
+    }
+
+    .buttons {
+        gap: 8px;
+    }
+
+    button {
+        min-height: 58px;
+        border-radius: 12px;
+    }
+
+    .display {
+        min-height: 110px;
+    }
+}
